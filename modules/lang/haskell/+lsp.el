@@ -7,5 +7,6 @@
   (when (featurep! +ghcide)
     (setq lsp-haskell-server-path "ghcide"
           lsp-haskell-server-args nil))
+  (set-company-backend! 'haskell-mode 'company-lsp)
   ;; Does some strange indentation if it pastes in the snippet
   (setq-hook! 'haskell-mode-hook yas-indent-line 'fixed))
